@@ -1,0 +1,15 @@
+
+☐ Interface pour nav component navItem
+☐ Page list orders
+☐ Enum StateOrders
+☐ Interface Order
+☐ Modèle Order
+☐ Install json-server (Fake api rest full côté front)
+☐ Service Orders
+☐ Appels http et les observables
+☐ TableauLightComponent(component stupide)
+☐ Directives Angular & Perso
+☐ Pipe angular & Perso
+☐ BtnComponent (component stupide)
+
+☐ TP: page List Clients en prenant exemple sur page list orders
