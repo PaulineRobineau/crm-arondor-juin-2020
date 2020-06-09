@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
-  constructor() { }
+  @Input() navItems: any[];
+  @Input() vertical: boolean;
+  @Input() colorLight: boolean;
+  @Input() colorOne: boolean;
+  @Input() colorTwo: boolean;
+  @Input() colorThree: boolean;
 
   ngOnInit(): void {
   }
