@@ -2,24 +2,8 @@
   <app-icon-nav class="icon"></app-icon-nav>
   <app-header class="header"></app-header>
   <app-nav class="nav" [navItems]="navItems" [vertical]="true" [colorOne]="true"></app-nav>
-  <app-footer class="footer"></app-footer>
-  <!-- dynamic projection by rooter for pages -->
-  <!-- <app-template-two-col title="test title" [bgColorThree]="true" class="content">
-    <p class="left">Test left</p>
-    <p class="right">Test right</p>
-  </app-template-two-col>
-
-  <app-template-one-col [title]="true" [bgColorThree]="true" class="content">
-    <app-text class="title" [colorLight]="true">
-      <h1>bandeau title</h1>
-    </app-text>
-    <app-text class="contents" [colorOne]="true">
-      <h1>title</h1>
-      <h2>Subtitle</h2>
-      <p>Test projection</p>
-    </app-text>
-  </app-template-one-col> -->
-
   <router-outlet class="content"></router-outlet>
+  <app-footer class="footer"></app-footer>
+
 
 </app-ui>
