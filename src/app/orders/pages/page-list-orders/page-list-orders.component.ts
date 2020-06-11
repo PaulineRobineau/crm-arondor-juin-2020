@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateOrder } from 'src/app/core/enums/state-order.enum';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
 
@@ -11,6 +12,8 @@ import { OrdersService } from '../../services/orders.service';
 export class PageListOrdersComponent implements OnInit {
   public headers: string[];
   public collection: Order[];
+  public states = Object.values(StateOrder); //Object.values pour convertir en Array
+
   constructor(private os: OrdersService) { }
 
   ngOnInit(): void {
@@ -29,4 +32,11 @@ export class PageListOrdersComponent implements OnInit {
       'State'
     ]
   }
+
+  public changeState(item: Order, event) {
+    this.os.changeState(item, event.target.value).subscribe((res) => {
+      item.state = res.state;
+    });
+  }
+
 }
