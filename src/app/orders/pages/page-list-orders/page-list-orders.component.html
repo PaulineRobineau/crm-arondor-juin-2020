@@ -3,7 +3,7 @@
     <h1>All Orders</h1>
   </app-text>
   <ng-container class="contents">
-    <app-table *ngIf="collection" [headers]="headers">
+    <app-table *ngIf="collection$ | async as collection" [headers]="headers">
       <tr *ngFor="let item of collection">
         <td>{{ item.typePresta}}</td>
         <td>{{ item.client}}</td>
@@ -20,6 +20,6 @@
     </app-table>
     <app-btn [route]="btnRoute.route" [label]="btnRoute.label"></app-btn>
     <app-btn [href]="btnHref.href" [label]="btnHref.label"></app-btn>
-    <app-btn [action]="btnAction.action" [label]="btnAction.label"></app-btn>
+    <app-btn [action]="btnAction.action" [label]="btnAction.label" (clicked)="popup()"></app-btn>
   </ng-container>
 </app-template-one-col>

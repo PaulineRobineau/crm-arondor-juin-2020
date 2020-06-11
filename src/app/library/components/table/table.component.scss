@@ -1,7 +1,7 @@
 @import 'theme';
 
 .table-list {
-  .state-canceled {
+  .state-canceled, .state-inactive {
     background: $color-error;
   }
 
@@ -9,9 +9,10 @@
     background: $color1;
   }
 
-  .state-confirmed {
+  .state-confirmed, .state-active {
     background: $color-success;
   }
+
 }
 
 .bg-color-two {

@@ -1,1 +1,21 @@
-<p>page-list-clients works!</p>
+<app-template-one-col [title]="true" [bgColorThree]="true">
+  <app-text class="title" [colorLight]="true">
+    <h1>All Clients</h1>
+  </app-text>
+  <ng-container class="contents">
+    <app-table *ngIf="collection$ | async as collection" [headers]="headers">
+      <tr *ngFor="let item of collection">
+        <td>{{ item.name}}</td>
+        <td>{{ item.ca | currency: 'EUR'}}</td>
+        <td>{{ item | totalca | currency: 'EUR'}}</td>
+        <td [appState]="item.state">
+          <select (change)="changeState(item,$event)" >
+            <option *ngFor="let state of states" [value]="state" [selected]="state === item.state">{{ state }}</option>
+          </select>
+        </td>
+        <td>{{ item.comment}}</td>
+      </tr>
+    </app-table>
+    <app-btn [route]="btnRoute.route" [label]="btnRoute.label"></app-btn>
+  </ng-container>
+</app-template-one-col>
