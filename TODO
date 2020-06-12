@@ -27,3 +27,27 @@
 ☐ Message d'erreurs dans le html
 ☐ Les signaux d'erreur grâce au css et aux validateurs
 
+☐ TP Delete :
+  ☐ Ajouter une colonne Action dans le tableau (page list order ts)
+  ☐ Ajouter un td avec un icon delete dans le tableau (page list order html)
+  ☐ Ajouter un (click)=delete() sur cet icon
+  ☐ Créer la fonction delete(item: Order) dans page list order ts
+  ☐ Créer la fonction deleteItem(item: Order ou id: number) dans le service
+  ☐ Modifier app page list order ts pour avoir un observable chaud pour collection$
+  ☐ Initialiser collection$ avec un appel http(this.os.collecton.subscribe())
+  ☐ Dans le delete() de pasge-list-order.ts, dans le susbcribe, on actualise collection$ avec un nouvel appel http(this.os.collecton.subscribe()
+
+☐ TP Edit :
+  ☐ Ajouter un icône edit dans la colonne action
+  ☐ Ajouter (click)="edit(item)" sur cet icône
+  ☐ edit(item) fait une redirection vers la route orders/edit/{id}
+  ☐ Créer une route pour edit qui prend un parametre id dans l'url (regarder dans la doc)
+  ☐ Créer le component pageEditOrderComponent
+  ☐ page-edit-order.component.ts : récupérer l'id qui se trouve dans l'url (ActivatedRoute -> service à injecter)
+  ☐ Appeler this.os.getItemById(id: number): Observable<Order>
+  ☐ L'observable qui est retourné par cette méthode sert à initialiser un observable item$: Observable<Order> et qui est déclaré plus haut sur PageEditOrderComponent.ts
+  ☐ Dans la page-edit-order.html utiliser app-template-one-col, app-text & app-form-order :
+    ☐ contrairement à la page add, initFormItem doit être bindé avec item$ (utiliser | async : ex avec collection$ dans le html de page-list-order)
+  ☐ Dans page-edit-order.html on garde le même @Ouput() avec le même appel de onSubmited($event) que dans la page add-order.html
+  ☐ La fonction onSubmited(item: Order) dans page-edit-order.ts va utiliser this.os.updateItem()
+  ☐ Dans le subscribe() de this.os.updateItem(item) vous redirigez l'utilisateur vers la route orders (ex : add-order.component.ts)

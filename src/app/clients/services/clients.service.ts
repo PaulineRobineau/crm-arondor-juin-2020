@@ -33,6 +33,9 @@ export class ClientsService {
     return this.http.patch<Client>(`${this.urlApi}clients/${item.id}`,item);
   }
   // add item in collection
+  public addItem(item:Client): Observable<Client>{
+    return this.http.post<Client>(`${this.urlApi}clients`,item);
+  }
   // delete item in collection
   // get item by id
 }

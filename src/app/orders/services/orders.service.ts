@@ -32,10 +32,13 @@ export class OrdersService {
     return this.http.patch<Order>(`${this.urlApi}orders/${item.id}`,item);
   }
 
+  // add item in collection
   public addItem(item:Order): Observable<Order>{
     return this.http.post<Order>(`${this.urlApi}orders`,item);
   }
-  // add item in collection
   // delete item in collection
+  public deleteItem(item: Order): Observable<Order>{
+    return this.http.delete<Order>(`${this.urlApi}orders/${item.id}`);
+  }
   // get item by id
 }

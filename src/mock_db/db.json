@@ -29,26 +29,6 @@
       "client": "nemesys",
       "comment": "fssdgh",
       "id": 3
-    },
-    {
-      "tjmHt": 700,
-      "nbJours": 5,
-      "tva": 20,
-      "state": "CONFIRMED",
-      "typePresta": "Formation",
-      "client": "Atos",
-      "comment": "Comment pour Atos",
-      "id": 4
-    },
-    {
-      "tjmHt": 600,
-      "nbJours": 2,
-      "tva": 20,
-      "state": "OPTION",
-      "typePresta": "Formation",
-      "client": "Pauline",
-      "comment": "TestComment",
-      "id": 5
     }
   ],
   "clients": [
@@ -67,6 +47,22 @@
       "name": "Modis",
       "ca": 120000,
       "comment": "un comment pour client modis"
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": 3,
+      "name": null,
+      "ca": null,
+      "comment": null
+    },
+    {
+      "state": "ACTIVE",
+      "tva": 20,
+      "id": 4,
+      "name": "aa",
+      "ca": 100000,
+      "comment": "z"
     }
   ]
 }

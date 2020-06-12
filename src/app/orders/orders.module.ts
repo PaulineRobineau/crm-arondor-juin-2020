@@ -9,6 +9,7 @@ import { FormOrderComponent } from './components/form-order/form-order.component
 import { OrdersRoutingModule } from './orders-routing.module';
 import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.component';
 import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orders.component';
+import { IconsModule } from '../icons/icons.module';
 
 
 
@@ -21,7 +22,8 @@ import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orde
     TemplatesModule,
     TextModule,
     CoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IconsModule
   ]
 })
 export class OrdersModule { }

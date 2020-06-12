@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { StateOrder } from 'src/app/core/enums/state-order.enum';
 import { Btn } from 'src/app/core/interfaces/btn';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
+import { SubjectSubscriber } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-page-list-orders',
@@ -18,18 +19,18 @@ export class PageListOrdersComponent implements OnInit {
   public btnAction: Btn;
   public headers: string[];
   //public collection: Order[];
-  public collection$: Observable<Order[]> // $ = convention de nommage pour les Observable
+  public collection$ : Subject<Order[]> = new Subject(); // $ = convention de nommage pour les Observable
   public states = Object.values(StateOrder); //Object.values pour convertir en Array
 
   constructor(private os: OrdersService) { }
 
   ngOnInit(): void {
-    /*this.os.collection.subscribe(
+    this.os.collection.subscribe(
       (datas) => {
-        this.collection = datas;
+        this.collection$.next(datas); //Observable chaud
       }
-    );*/
-    this.collection$ = this.os.collection;
+    );
+    //this.collection$ = this.os.collection;
     this.headers = [
       'Type',
       'Client',
@@ -37,7 +38,8 @@ export class PageListOrdersComponent implements OnInit {
       'Tjm HT',
       'Total HT',
       'Total TTC',
-      'State'
+      'State',
+      'Action',
     ]
     this.btnRoute = {route: 'add', label: 'Add order'};
     this.btnHref = {href: 'http://www.google.fr', label: 'Go to Google'};
@@ -47,6 +49,16 @@ export class PageListOrdersComponent implements OnInit {
   public changeState(item: Order, event) {
     this.os.changeState(item, event.target.value).subscribe((res) => {
       item.state = res.state;
+    });
+  }
+
+  public delete(item: Order, event){
+    this.os.deleteItem(item).subscribe((res) => {
+      this.os.collection.subscribe(
+        (datas) => {
+          this.collection$.next(datas); //Observable chaud
+        }
+      );
     });
   }
 

@@ -1,0 +1,8 @@
+<app-template-one-col [title]="true" [bgColorThree]="true">
+  <app-text class="title" [colorLight]="true">
+    <h1>All Clients</h1>
+  </app-text>
+  <ng-container class="contents">
+    <app-form-client [initFormItem]="initFormItem" (submited)="onSubmited($event)"></app-form-client>
+  </ng-container>
+</app-template-one-col>
