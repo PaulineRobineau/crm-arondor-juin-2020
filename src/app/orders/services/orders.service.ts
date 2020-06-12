@@ -31,6 +31,10 @@ export class OrdersService {
   public updateItem(item:Order): Observable<Order>{
     return this.http.patch<Order>(`${this.urlApi}orders/${item.id}`,item);
   }
+
+  public addItem(item:Order): Observable<Order>{
+    return this.http.post<Order>(`${this.urlApi}orders`,item);
+  }
   // add item in collection
   // delete item in collection
   // get item by id

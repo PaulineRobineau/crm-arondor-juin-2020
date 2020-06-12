@@ -13,3 +13,17 @@
 ☐ BtnComponent (component stupide)
 
 ☐ TP: page List Clients en prenant exemple sur page list orders
+
+☐ ReactiveFormModule
+☐ FormGroup
+☐ FormControl
+☐ FormBuilder
+☐ Binding FormGroup et FormControl avec le html
+☐ Initialiser les FormControl
+☐ ngSubmit
+☐ @Ouput()
+☐ Validators
+☐ Rendre le bouton d'envoie disabled si Validators invalides
+☐ Message d'erreurs dans le html
+☐ Les signaux d'erreur grâce au css et aux validateurs
+
